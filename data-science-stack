@@ -3,7 +3,7 @@
 # Copyright (c) 2019, NVIDIA CORPORATION. All rights reserved.
 
 # Global Paramaters
-STACK_VERSION=2.9.0
+STACK_VERSION=2.10.0
 NOTEBOOKS_VERSION=21.06
 
 MIN_DRIVER=465.27
@@ -529,10 +529,10 @@ build_container () {
   nvlog "Run From: $RUNFROM"
   nvlog "Temp Directory: $TEMPDIR"
   cd $TEMPDIR
-  cp -a $RUNFROM/data-science-stack.Dockerfile $RUNFROM/README.md $TEMPDIR
+  cp -a $RUNFROM/data-science-stack.Dockerfile $RUNFROM/README.md $RUNFROM/run-jupyter $TEMPDIR
   cp -a $RUNFROM/environments/${ENVIRONMENT_NAME}-pinned.yaml $TEMPDIR/environment-pinned.yaml
   ls -aFl
-  docker build \
+  DOCKER_BUILDKIT=1 docker build \
     --tag ${ENVIRONMENT_NAME}:${STACK_VERSION} \
     -f ./data-science-stack.Dockerfile .
   rm -r $TEMPDIR

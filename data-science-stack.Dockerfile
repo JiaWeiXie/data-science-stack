@@ -39,15 +39,13 @@ ARG NOTEBOOKS_VERSION=21.06
 ENV CONDA_ROOT=/conda
 ENV NOTEBOOKS_DIR=/notebooks
 
+COPY --chmod=755 run-jupyter /
+
 RUN curl https://repo.anaconda.com/miniconda/Miniconda3-py37_${CONDA_VERSION}-Linux-x86_64.sh -k -o /miniconda.sh \
     && sh /miniconda.sh -b -p ${CONDA_ROOT} \
     && rm -f /miniconda.sh \
     && echo "conda ${CONDA_VERSION}" >> /conda/conda-meta/pinned \
     && ${CONDA_ROOT}/bin/conda init bash \
-    && echo "#!/bin/bash\n\
-      source /conda/bin/activate data-science-stack-${STACK_VERSION}\n\
-      jupyter-lab --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.token='' --notebook-dir=${NOTEBOOKS_DIR}" > /run-jupyter \
-    && chmod 755 /run-jupyter \
     && mkdir -p ${NOTEBOOKS_DIR} \
     && cd ${NOTEBOOKS_DIR} \
     && git clone --single-branch --depth 1 --branch branch-${NOTEBOOKS_VERSION} \

@@ -4,3 +4,5 @@ tmp.json
 *.deb
 *.rpm
 *.txt
+notebooks
+.env

@@ -1,0 +1,7 @@
+#!/bin/bash
+STACK_VERSION=2.9.0
+NOTEBOOKS_DIR=/notebooks
+
+source /conda/bin/activate data-science-stack-${STACK_VERSION}
+
+jupyter-lab --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.token=${NOTEBOOKS_TOKEN} --notebook-dir=${NOTEBOOKS_DIR}

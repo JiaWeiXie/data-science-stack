@@ -5,6 +5,8 @@ channels:
   - conda-forge
   - pytorch
   - defaults
+  - plotly
+  - bokeh
 dependencies:
   - conda-forge::_libgcc_mutex=0.1
   - conda-forge::_openmp_mutex=4.5
@@ -43,7 +45,8 @@ dependencies:
   - conda-forge::bleach=3.3.0
   - conda-forge::blinker=1.4
   - conda-forge::blosc=1.21.0
-  - conda-forge::bokeh=2.2.3
+  - conda-forge::bokeh=2.4.3
+  - conda-forge::jupyter_bokeh =3.0.4
   - conda-forge::boost=1.74.0
   - conda-forge::boost-cpp=1.74.0
   - conda-forge::bqplot=0.12.29
@@ -68,7 +71,7 @@ dependencies:
   - conda-forge::colorcet=2.0.6
   - conda-forge::cramjam=2.3.1
   - conda-forge::cryptography=3.4.7
-  - nvidia::cudatoolkit=11.2.72
+  - nvidia::cudatoolkit=11.2
   - rapidsai::cudf=21.06.01
   - rapidsai::cudf_kafka=21.06.01
   - rapidsai::cugraph=21.06.00
@@ -380,7 +383,7 @@ dependencies:
   - conda-forge::python-snappy=0.6.0
   - conda-forge::python_abi=3.7
   - conda-forge::pythreejs=2.3.0
-  - conda-forge::pytorch=1.8.0
+  - conda-forge::pytorch=1.12.1
   - conda-forge::pytz=2021.1
   - conda-forge::pyu2f=0.1.5
   - conda-forge::pyviz_comms=2.0.2
@@ -435,7 +438,7 @@ dependencies:
   - conda-forge::tk=8.6.10
   - conda-forge::toml=0.10.2
   - conda-forge::toolz=0.11.1
-  - pytorch::torchvision=0.2.2
+  - pytorch::torchvision=0.13.1
   - conda-forge::tornado=6.1
   - conda-forge::tqdm=4.61.1
   - conda-forge::traitlets=5.0.5
@@ -482,4 +485,5 @@ dependencies:
   - conda-forge::zipp=3.4.1
   - conda-forge::zlib=1.2.11
   - conda-forge::zstd=1.4.9
+  - conda-forge::plotly=2.7.0
 

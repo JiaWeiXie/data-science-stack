@@ -1,0 +1,11 @@
+services:
+  cudagpu:
+    image: nvcr.io/nvidia/cuda:11.2.2-devel-ubuntu20.04
+    command: nvidia-smi
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
